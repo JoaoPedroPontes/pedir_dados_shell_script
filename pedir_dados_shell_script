@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+echo "Bem vindo ao MetaForm, seus dados estão seguros"
+
+sleep 5
+
+echo "Nome de Usuário: $USER"
+echo "Sua HOME pessoal é: $HOME"
+echo "O Shell utilizado é $SHELL"
+echo 
+
+read -p "Qual seu nome completo? " nome
+read -p "Qual sua idade? " idade
+read -p "Qual seu endereço? " endereco
+read -p "Qual seu telefone? " telefone
+read -p "Qual sua escolaridade? " escolaridade
+read -p "Qual sua profissão? " profissao
+echo 
+
+echo "Seu nome completo é: $nome"
+echo "Sua idade é: $idade"
+echo "Seu endereço é: $endereco"
+echo "Seu telefone é: $telefone"
+echo "Sua escolaridade é: $escolaridade"
+echo "Sua profissão é: $profissao"
+
+read -p "Todos os dados estão corretos? [S/N] " continuar
+
