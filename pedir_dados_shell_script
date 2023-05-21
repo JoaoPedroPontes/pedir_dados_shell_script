@@ -2,7 +2,7 @@
 
 echo "Bem vindo ao MetaForm, seus dados estão seguros"
 
-sleep 5
+#sleep 5
 
 echo "Nome de Usuário: $USER"
 echo "Sua HOME pessoal é: $HOME"
@@ -10,11 +10,28 @@ echo "O Shell utilizado é $SHELL"
 echo 
 
 read -p "Qual seu nome completo? " nome
+test -z "$nome" \
+&& { echo "Opsss, Precisa entrar com seu nome... Saindo do programa." ; exit ; }
+
 read -p "Qual sua idade? " idade
+test -z "$idade" \
+&& { echo "Opsss, precisa entrar com sua idade... Saindo do programa." ; exit ; }
+
 read -p "Qual seu endereço? " endereco
+test -z "$endereco" \
+&& { echo "Opsss, precisa entrar com seu endereço... Saindo do programa." ; exit ;}
+
 read -p "Qual seu telefone? " telefone
+test -z "$telefone" \
+&& { echo "Opsss, precisa entrar com seu telefone... Saindo do programa." ; exit ; }
+
 read -p "Qual sua escolaridade? " escolaridade
+test -z "$escolaridade" \
+&& { echo "Opsss, precisa entrar com sua escolaridade... Saindo do programa."; exit ;}
+
 read -p "Qual sua profissão? " profissao
+test -z "$profissao" \
+&& { echo "Opsss, precisa entrar com sua profissão... Saindo do programa."; exit ;}
 echo 
 
 echo "Seu nome completo é: $nome"
@@ -24,5 +41,9 @@ echo "Seu telefone é: $telefone"
 echo "Sua escolaridade é: $escolaridade"
 echo "Sua profissão é: $profissao"
 
-read -p "Todos os dados estão corretos? [S/N] " continuar
+read -p "Todos os seus dados estão corretos? [S/N] " continuar
+
+test "$continuar" = "S" \
+&& echo "Enviamos todos os dados para nosso banco de dados." \
+|| echo "Ok... Não vamos enviar para nenhum lugar."
 
